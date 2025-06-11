@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtkvnwil1ot8g"]
+
+[ext_resource type="PackedScene" uid="uid://cyysfti8kjnj5" path="res://scenes/alice.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://b5wgj2cue282m" path="res://scenes/map1.tscn" id="1_yqjtg"]
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_yqjtg")]
+
+[node name="Alice" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(-16, -16)
+
+[node name="Camera2D" type="Camera2D" parent="Alice"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
