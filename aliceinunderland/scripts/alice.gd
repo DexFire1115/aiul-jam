@@ -23,14 +23,10 @@ func move():
 				var tween = create_tween()
 				tween.tween_property(self, "position", position + (dir * tileSize), testSprint(0.17,0.3))
 				tween.tween_callback(func callback(): isMoving = false)
-			reposByTile(-1,3,dir,Vector2(0,1),-1,15)
-			reposByTile(-1,15,dir,Vector2(0,-1),-1,3)
-			reposByTile(5,2,dir,Vector2(1,0),18,2)
-			reposByTile(18,2,dir,Vector2(-1,0),5,2)
-			reposByTile(5,3,dir,Vector2(1,0),18,3)
-			reposByTile(18,3,dir,Vector2(-1,0),5,3)
-			reposByTile(25,-2,dir,Vector2(0,-1),25,-12)
-			reposByTile(25,-12,dir,Vector2(0,1),25,-2)
+			twowayRepo(-1,3,dir,Vector2(0,1),-1,15)
+			twowayRepo(5,2,dir,Vector2(1,0),18,2)
+			twowayRepo(5,3,dir,Vector2(1,0),18,3)
+			twowayRepo(24,-2,dir,Vector2(0,-1),24,-12)
 		else:
 			animation.stop()
 			animation.set_frame_and_progress(1,0.99)
@@ -44,3 +40,7 @@ func reposition(x1,y1,idir,dir,x2,y2):
 
 func reposByTile(x1,y1,idir,dir,x2,y2):
 	reposition((x1 * 32) + 16,(y1 * 32) + 16,idir,dir,(x2 * 32) + 16,(y2 * 32) + 16)
+
+func twowayRepo(x1,y1,idir,dir,x2,y2):
+	reposByTile(x1,y1,idir,dir,x2,y2)
+	reposByTile(x2,y2,idir,dir*Vector2(-1,-1),x1,y1)
