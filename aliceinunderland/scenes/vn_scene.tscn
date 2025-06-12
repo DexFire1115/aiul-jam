@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b15xick8718i5"]
+
+[node name="VN-Scene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 794.0
+offset_bottom = 415.0

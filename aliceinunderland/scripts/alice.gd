@@ -26,7 +26,7 @@ func move():
 			twowayRepo(-1,3,dir,Vector2(0,1),-1,15)
 			twowayRepo(5,2,dir,Vector2(1,0),18,2)
 			twowayRepo(5,3,dir,Vector2(1,0),18,3)
-			twowayRepo(24,-2,dir,Vector2(0,-1),24,-12)
+			twowayRepo(24,-2,dir,Vector2(0,-1),24,-17)
 		else:
 			animation.stop()
 			animation.set_frame_and_progress(1,0.99)
